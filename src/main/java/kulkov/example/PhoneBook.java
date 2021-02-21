@@ -17,13 +17,15 @@ public class PhoneBook {
 
     public void get(String nameForSearch)   {
 
-        System.out.printf("%s, %n", phoneBook.);
-        Iterator iterator = phoneBook.values().iterator();
+        Iterator iterator = phoneBook.keySet().iterator();
+
         while(iterator.hasNext())   {
-            String usernameFromBD = (String) iterator.next();
-            Integer phoneNumberFromBD = (Integer) phoneBook.
-            if(usernameFromBD == nameForSearch) {
-                System.out.printf("%s, %d\n", usernameFromBD, );
+
+            Integer phoneNumber = (Integer) iterator.next();
+            String phoneName = (String) phoneBook.get(phoneNumber);
+
+            if(phoneName.equals(nameForSearch)) {
+                System.out.printf("%s, %d\n", phoneName, phoneNumber);
             }
         }
 
@@ -38,7 +40,7 @@ public class PhoneBook {
             Integer phoneNumber = (Integer) iterator.next();
             String phoneName = (String) phoneBook.get(phoneNumber);
 
-            System.out.printf("%d\t%s\n", phoneNumber, phoneName);
+            System.out.printf("%s\t%d\n", phoneName, phoneNumber);
         }
 
     }

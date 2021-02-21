@@ -15,7 +15,8 @@ public class Main {
 
     public static void main(String[] args) {
 
-        Task1();
+//        Task1();
+        Task2();
 
 
     }
@@ -48,9 +49,10 @@ public class Main {
                     phoneBook.show();
                     break;
                 case "q":
+                    scanner.close();
                     return;
             }
-
+            scanner.nextLine();
         } while(true);
 
 
