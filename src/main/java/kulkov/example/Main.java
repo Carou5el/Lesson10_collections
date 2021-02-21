@@ -23,10 +23,34 @@ public class Main {
             map.put(list.get(i), Collections.frequency(list, list.get(i)));
         }
 
-        // Вывод количества вхождений слов.
-        for (int i = 0; i < map.size(); i++) {
-            System.out.printf("Key = %d\t", map.get(list.get(i)));
-//            System.out.printf("Value = %s\n", map.);
+        System.out.printf("Уникальные значения.\n");
+        // Вывод уникальных пар.
+        Iterator iterator = map.keySet().iterator();
+        while(iterator.hasNext()) {
+
+            String key = (String) iterator.next();
+            Integer value = (Integer) map.get(key);
+
+            if(value > 1)    {
+//                System.out.printf("Unique!\t[%d, %s]\n", value, key);
+                continue;
+            }
+            System.out.printf("[%d, %s]\n", value, key);
         }
+
+        System.out.printf("Количество вхождений каждого слова.\n");
+
+        Iterator iterator1 = map.keySet().iterator();
+
+        while (iterator.hasNext())  {
+            String key = (String) iterator.next();
+            Integer value = (Integer) map.get(key);
+
+            System.out.printf("[%d, %s]\n", value, key);
+
+        }
+
+
+
     }
 }
